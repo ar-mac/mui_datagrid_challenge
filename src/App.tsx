@@ -1,8 +1,13 @@
 import { ExamplePage1, ExamplePage2, Navigation } from 'pages'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
+const queryClient = new QueryClient()
 
 export const App = () => {
   return (
+    <QueryClientProvider client={queryClient}>
     <BrowserRouter>
       <Navigation />
       <main>
@@ -14,5 +19,7 @@ export const App = () => {
         </div>
       </main>
     </BrowserRouter>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   )
 }

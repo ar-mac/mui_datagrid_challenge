@@ -1,15 +1,15 @@
 import {
-  ExampleResource,
-  ExampleResourceAPIResponse, ResourceListAPIParams,
-} from 'types/exampleResource'
+  CountryApiParams, ExampleResourceAPIResponse,
+} from 'types/countries'
 import { createQueryKeys } from '@lukemorales/query-key-factory'
 import axios from 'axios'
+import { Preset } from "../../types/preset";
 
-export const exampleQueries = createQueryKeys('resource', {
-  list: (params: ResourceListAPIParams) => ({
+export const countryQueries = createQueryKeys('countries', {
+  list: (params: CountryApiParams) => ({
     queryKey: [params],
     queryFn: async () => {
-      const response = await axios.get('/api/resource', {
+      const response = await axios.get('http://localhost:3000/countries', {
         params,
       })
 
@@ -18,15 +18,10 @@ export const exampleQueries = createQueryKeys('resource', {
   }),
 })
 
-export const resourceMutations = {
-  delete: () => ({
-    mutationKey: ['resourceDelete'],
-    mutationFn: async (id: string) =>
-      axios.delete(`/api/onboarding/v2/rosters/delete_roster/${id}`),
-  }),
+export const presetMutations = {
   create: () => ({
-    mutationKey: ['resourceCreate'],
-    mutationFn: async (data: ExampleResource) =>
+    mutationKey: ['presetCreate'],
+    mutationFn: async (data: Preset) =>
       axios.post(`/api/resource`, data),
   }),
 }
