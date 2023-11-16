@@ -21,7 +21,7 @@ export const ExamplePage1 = () => {
   const query = useQuery(countryQueries.list({}))
 
   if (!query.isSuccess) {
-    return "Loading..."
+    return <>Loading...</>
   }
 
   return (
