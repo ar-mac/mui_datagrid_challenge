@@ -5,9 +5,7 @@ import classNames from 'classnames'
 import { Link } from 'react-router-dom'
 
 const navigation = [
-  { name: 'Page 1', href: '/', current: true },
-  { name: 'Page2 with index 128', href: '/page2/128', current: false },
-  { name: 'Page2 with index 42', href: '/page2/42', current: false },
+  { name: 'DataGrid page', href: '/', current: true },
 ]
 
 export const Navigation = () => (
