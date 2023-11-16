@@ -1,0 +1,1 @@
+- Add normalizers to RQ setup
