@@ -1,5 +1,12 @@
 # React app standard setup
 
+To run the app:
+`npm install`
+`npm app:setup`
+and then in 2 separate terminal windows
+`npm start`
+`npm run start:server`
+
 This project was bootstrapped using [Create React App](https://github.com/facebook/create-react-app) and migrated to [Vite](https://vitejs.dev/).
 
 - Folders structure
